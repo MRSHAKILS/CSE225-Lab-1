@@ -1,0 +1,85 @@
+Code 1:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //read array size
+    int s;
+    cout << "Enter array size: ";
+    cin >> s;
+    
+    //allocate integer arrray
+    int* arr = new int[s];
+    
+    
+    //read array element from user
+    cout << "Enter array elements: " << endl;
+    for(int i = 0; i < s; i++){
+        cin >> arr[i];
+    } 
+    
+    //print array elements
+    cout << "Array output:" << endl;
+    for(int i = 0; i < s; i++){
+        cout << arr[i] << " ";
+    }
+    
+    //deallocate array
+    delete [] arr;
+    arr = NULL; //optional step
+
+
+    return 0;
+}
+
+
+Code 2:
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    // Read array size
+    int n;
+    int m;
+    cout << "Enter row size: ";
+    cin >> n;
+    cout << "Enter column size: ";
+    cin >> m;
+    
+    // Allocate char array
+    char** a = new char*[n];
+    for(int i = 0; i < n; i++) {
+        a[i] = new char[m];
+    }
+    
+    // Read array elements from the user
+    cout << "Enter array elements:" << endl;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    } 
+    
+    // Print array elements
+    cout << "Array output:" << endl;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
+    // Deallocate array
+    for(int i = 0; i < n; i++) {
+        delete[] a[i];
+    }
+    delete[] a;
+    a = NULL; // Optional step
+
+    return 0;
+}
